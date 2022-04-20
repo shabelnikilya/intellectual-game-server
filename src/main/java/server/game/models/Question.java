@@ -20,6 +20,6 @@ public class Question {
     private Topic topic;
     @NonNull
     private String text;
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "answers")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "answers", fetch = FetchType.EAGER)
     private final Set<Answer> answers = new HashSet<>();
 }
